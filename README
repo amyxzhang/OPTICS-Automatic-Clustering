@@ -1,7 +1,3 @@
-
-This algorithm assumes you have already obtained a hierarchical clustering representation of your data, through OPTICS or other means. The clustering algorithm I use is OPTICS and an implementation in python can be found here: http://chemometria.us.edu.pl/download/optics.py
- 
- 
 Automatic Clustering of Hierarchical Clustering Representations
  
 Library Dependencies: numpy, if graphing is desired - matplotlib
@@ -15,3 +11,11 @@ Implemented in Python by Amy X. Zhang, Cambridge Computer Laboratory.
 March 2012
 amy.xian.zhang@gmail.com
 amyxzhang.wordpress.com
+
+This algorithm assumes you have already obtained a hierarchical clustering representation  of your data, through OPTICS or other means. The clustering algorithm I use is OPTICS and an implementation in python can be found here: http://chemometria.us.edu.pl/download/optics.py
+
+OPTICS is a hierarchical clustering algorithm for finding density-based clusters in spatial data. It returns a list of points linearly ordered so that spatially close points are neighbors as well as an associated reachability value for every point. This makes up a reachability plot, a special kind of dendrogram. For this algorithm, the input is a reachability plot. If necessary, dendrograms can be converted to reachability plots and vice versa, as outlined in the above paper.
+ 
+The algorithm takes in a reachability plot and list of points ordered by OPTICS. It returns the root node of the hierarchical clustering tree created by finding the local maximas in the reachability plot and choosing whether to use or discard them. Please see the paper for a more detailed description. From here, I have added helper functions to print out, graph, write to file, or extract only leaves from the tree. There are a few changes in the algorithm given in the paper, and they are noted in the code.
+
+
