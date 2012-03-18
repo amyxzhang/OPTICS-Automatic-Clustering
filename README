@@ -10,7 +10,7 @@ available from http://dx.doi.org/10.1007/3-540-36175-8_8
 Implemented in Python by Amy X. Zhang, Cambridge Computer Laboratory.
 March 2012
 amy.xian.zhang@gmail.com
-amyxzhang.wordpress.com
+http://amyxzhang.wordpress.com
 
 This algorithm assumes you have already obtained a hierarchical clustering representation  of your data, through OPTICS or other means. The clustering algorithm I use is OPTICS and an implementation in python can be found here: http://chemometria.us.edu.pl/download/optics.py. See the demo on how to use the OPTICS code with this.
 
