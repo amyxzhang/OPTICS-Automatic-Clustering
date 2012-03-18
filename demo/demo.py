@@ -3,7 +3,7 @@ Created on Mar 17, 2012
 
 @author: Amy X Zhang
 amy.xian.zhang@gmail.com
-amyxzhang.wordpress.com
+http://amyxzhang.wordpress.com
 
 
 Demo of OPTICS Automatic Clustering Algorithm
@@ -52,7 +52,6 @@ AutoC.graphTree(rootNode, RPlot)
 
 #array of the TreeNode objects, position in the array is the TreeNode's level in the tree
 array = AutoC.getArray(rootNode, 0, [0])
-print array
 
 #get only the leaves of the tree
 leaves = AutoC.getLeaves(rootNode, [])

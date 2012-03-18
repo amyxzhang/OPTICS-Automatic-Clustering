@@ -11,7 +11,7 @@ available from http://dx.doi.org/10.1007/3-540-36175-8_8
 Implemented in Python by Amy X. Zhang, Cambridge Computer Laboratory.
 March 2012
 amy.xian.zhang@gmail.com
-amyxzhang.wordpress.com
+http://amyxzhang.wordpress.com
 '''
 
 
@@ -104,7 +104,7 @@ def clusterTree(node, parentNode, localMaximaPoints, RPlot, RPoints, min_cluster
     '''
     To adjust the fineness of the clustering, adjust the following ratios.
     The higher the ratio, the more generous the algorithm is to preserving
-    local minimums, and the more cuts the resulting tree will have
+    local minimums, and the more cuts the resulting tree will have.
     '''
 
     #the maximum ratio we allow of average height of clusters on the right and left to the local maxima in question
@@ -146,9 +146,12 @@ def clusterTree(node, parentNode, localMaximaPoints, RPlot, RPoints, min_cluster
         return
     
     '''
-    Check if nodes can be moved up one level - the new cluster created is too "similar" to its parent, given the similarity threshold
-    similarity can be determined by the size of the new cluster relative to the size of the parent node
-    or the average of the reachability values of the new cluster relative to the average of the reachability values of the parent node
+    Check if nodes can be moved up one level - the new cluster created
+    is too "similar" to its parent, given the similarity threshold.
+    Similarity can be determined by 1)the size of the new cluster relative
+    to the size of the parent node or 2)the average of the reachability
+    values of the new cluster relative to the average of the
+    reachability values of the parent node
     A lower value for the similarity threshold means less levels in the tree.
     '''
     similaritythreshold = 0.4
@@ -156,8 +159,8 @@ def clusterTree(node, parentNode, localMaximaPoints, RPlot, RPoints, min_cluster
     if parentNode != None:
         sumRP = NP.average(RPlot[node.start:node.end])
         sumParent = NP.average(RPlot[parentNode.start:parentNode.end])
-        if float(float(node.end-node.start) / float(parentNode.end-parentNode.start)) > similaritythreshold:
-        #if float(float(sumRP) / float(sumParent)) > similaritythreshold:
+        if float(float(node.end-node.start) / float(parentNode.end-parentNode.start)) > similaritythreshold: #1)
+        #if float(float(sumRP) / float(sumParent)) > similaritythreshold: #2)
             parentNode.children.remove(node)
             bypassNode = 1
         
