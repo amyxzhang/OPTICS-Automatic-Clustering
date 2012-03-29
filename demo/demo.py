@@ -17,19 +17,38 @@ import OpticsClusterArea as OP
 from itertools import *
 import AutomaticClustering as AutoC
 
-# generate some spatial data clustered into 4 general areas
+# generate some spatial data with varying densities
 np.random.seed(0)
 
 n_points_per_cluster = 250
-n_clusters = 6
-n_points = n_points_per_cluster*n_clusters
-means = np.array([[6,5],[0,-2],[-6,4],[-6,-5],[0,2],[3,0]])
-std = .8
-clustMed = []
 
 X = np.empty((0, 2))
-for i in range(n_clusters):
-    X = np.r_[X, means[i] + std * np.random.randn(n_points_per_cluster, 2)]
+X = np.r_[X, [-5,-2] + .8 * np.random.randn(n_points_per_cluster, 2)]
+
+X = np.r_[X, [4,-1] + .1 * np.random.randn(n_points_per_cluster, 2)]
+
+X = np.r_[X, [1,-2] + .2 * np.random.randn(n_points_per_cluster, 2)]
+
+X = np.r_[X, [-2,3] + .3 * np.random.randn(n_points_per_cluster, 2)]
+
+X = np.r_[X, [3,-2] + 1.6 * np.random.randn(n_points_per_cluster, 2)]
+
+X = np.r_[X, [5,6] + 2 * np.random.randn(n_points_per_cluster, 2)]
+
+
+#plot scatterplot of points
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
+
+ax.plot(X[:,0], X[:,1], 'b.', ms=2)
+
+plt.savefig('Graph.png', dpi=None, facecolor='w', edgecolor='w',
+    orientation='portrait', papertype=None, format=None,
+    transparent=False, bbox_inches=None, pad_inches=0.1)
+plt.show()
+
+
 
 #run the OPTICS algorithm on the points, using a smoothing value (0 = no smoothing)
 RD, CD, order = OP.optics(X,9)
@@ -69,7 +88,7 @@ for item, c in zip(leaves, colors):
     node = np.array(node)
     ax.plot(node[:,0],node[:,1], c+'o', ms=5)
 
-plt.savefig('Graph.png', dpi=None, facecolor='w', edgecolor='w',
+plt.savefig('Graph2.png', dpi=None, facecolor='w', edgecolor='w',
     orientation='portrait', papertype=None, format=None,
     transparent=False, bbox_inches=None, pad_inches=0.1)
 plt.show()

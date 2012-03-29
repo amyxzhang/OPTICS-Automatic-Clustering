@@ -228,6 +228,9 @@ def graphTree(root, RPlot):
 
     a1 = [i for i in range(len(RPlot))]
     ax.vlines(a1, 0, RPlot)
+
+    plt.xlabel('Order of points')
+    plt.ylabel('Reachability-distance')
     
     num = 2
     graphNode(root, num, ax)
