@@ -15,7 +15,7 @@ This algorithm assumes you have already obtained a hierarchical clustering repre
 
 OPTICS is a hierarchical clustering algorithm for finding density-based clusters in spatial data. It returns a list of points linearly ordered so that spatially close points are neighbors as well as an associated reachability value for every point. This makes up a reachability plot, a special kind of dendrogram. For this algorithm, the input is a reachability plot. If necessary, dendrograms can be converted to reachability plots and vice versa, as outlined in the above paper.
  
-The algorithm takes in a reachability plot and list of points ordered by OPTICS. It returns the root node of the hierarchical clustering tree created by finding the local maximas in the reachability plot and choosing whether to use or discard them. Please see the paper for a more detailed description. There are a few changes in the algorithm given in the paper, and they are noted in the code. For functionaliy, I have added helper functions to print out, graph, write to file, or extract only leaves from the tree. See demo for examples on using them.
+The algorithm takes in a reachability plot and list of points ordered by OPTICS. It returns the root node of the hierarchical clustering tree created by finding the local maximas in the reachability plot and choosing whether to use or discard them. Please see the paper for a more detailed description. There are a few changes in the algorithm given in the paper, and they are noted in the code. For functionality, I have added helper functions to print out, graph, write to file, or extract only leaves from the tree. See demo for examples on using them.
 
 This code was used for the following publication (Bibtex format):
 
