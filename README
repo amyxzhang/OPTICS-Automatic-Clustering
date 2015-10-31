@@ -7,10 +7,9 @@ An implementation of the following algorithm, with some minor add-ons:
 J. Sander, X. Qin, Z. Lu, N. Niu, A. Kovarsky, K. Whang, J. Jeon, K. Shim, J. Srivastava, Automatic extraction of clusters from hierarchical clustering representations. Advances in Knowledge Discovery and Data Mining (2003) Springer Berlin / Heidelberg. 567-567
 available from http://dx.doi.org/10.1007/3-540-36175-8_8
 
-Implemented in Python by Amy X. Zhang, Cambridge Computer Laboratory.
-March 2012
-amy.xian.zhang@gmail.com
-http://amyxzhang.wordpress.com
+Implemented in Python by Amy X. Zhang, while at Cambridge Computer Laboratory in March 2012. Now at MIT.
+axz@mit.edu
+http://people.csail.mit.edu/axz
 
 This algorithm assumes you have already obtained a hierarchical clustering representation  of your data, through OPTICS or other means. The clustering algorithm I use is OPTICS and an implementation in python can be found here: http://chemometria.us.edu.pl/download/optics.py. See the demo on how to use the OPTICS code with this.
 
@@ -18,4 +17,13 @@ OPTICS is a hierarchical clustering algorithm for finding density-based clusters
  
 The algorithm takes in a reachability plot and list of points ordered by OPTICS. It returns the root node of the hierarchical clustering tree created by finding the local maximas in the reachability plot and choosing whether to use or discard them. Please see the paper for a more detailed description. There are a few changes in the algorithm given in the paper, and they are noted in the code. For functionaliy, I have added helper functions to print out, graph, write to file, or extract only leaves from the tree. See demo for examples on using them.
 
+This code was used for the following publication (Bibtex format):
 
+@inproceedings{zhang2013hoodsquare,
+  title={Hoodsquare: Modeling and recommending neighborhoods in location-based social networks},
+  author={Zhang, Amy X and Noulas, Anastasios and Scellato, Salvatore and Mascolo, Cecilia},
+  booktitle={Social Computing (SocialCom), 2013 International Conference on},
+  pages={69--74},
+  year={2013},
+  organization={IEEE}
+}
