@@ -10,8 +10,8 @@ available from http://dx.doi.org/10.1007/3-540-36175-8_8
 
 Implemented in Python by Amy X. Zhang, Cambridge Computer Laboratory.
 March 2012
-amy.xian.zhang@gmail.com
-http://amyxzhang.wordpress.com
+axz@mit.edu
+http://people.csail.mit.edu/axz
 '''
 
 
