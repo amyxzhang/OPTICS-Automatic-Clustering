@@ -2,8 +2,8 @@
 Created on Mar 17, 2012
 
 @author: Amy X Zhang
-amy.xian.zhang@gmail.com
-http://amyxzhang.wordpress.com
+axz@mit.edu 
+http://people.csail.mit.edu
 
 
 Demo of OPTICS Automatic Clustering Algorithm
